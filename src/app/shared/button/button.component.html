@@ -1,1 +1,14 @@
-<p>button works!</p>
+<button 
+  class="custom-button"
+  [class.primary]="variant === 'primary'"
+  [class.secondary]="variant === 'secondary'"
+  [class.text]="variant === 'text'"
+  [class.small]="size === 'small'"
+  [class.medium]="size === 'medium'"
+  [class.large]="size === 'large'"
+  [disabled]="disabled"
+  (click)="onClick()">
+  <i *ngIf="icon" class="fas fa-{{ icon }}"></i>
+  <span *ngIf="label">{{ label }}</span>
+</button>
+
