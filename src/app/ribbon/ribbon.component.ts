@@ -1,10 +1,11 @@
 import { Component } from "@angular/core"
 import { DocumentService } from "../services/document.service"
-
+import { CommonModule } from "@angular/common"
 @Component({
   selector: "app-ribbon",
   templateUrl: "./ribbon.component.html",
   standalone: true,
+  imports: [CommonModule],
   styleUrls: ["./ribbon.component.scss"],
 })
 export class RibbonComponent {

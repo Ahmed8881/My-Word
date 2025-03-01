@@ -1,0 +1,57 @@
+<header class="header">
+    <div class="header-top">
+      <div class="file-name">{{ fileName }}</div>
+      <div class="header-actions">
+        <button class="action-button" appTooltip="Comments">
+          <i class="far fa-comment"></i>
+          <span>Comments</span>
+        </button>
+        <button class="action-button" appTooltip="Catch up">
+          <i class="fas fa-sync"></i>
+          <span>Catch up</span>
+        </button>
+        <div class="dropdown">
+          <button class="action-button" appTooltip="Editing">
+            <i class="fas fa-pencil-alt"></i>
+            <span>Editing</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <button class="action-button share-button" appTooltip="Share">
+          <i class="fas fa-share"></i>
+          <span>Share</span>
+        </button>
+      </div>
+    </div>
+    
+    <nav class="main-menu">
+      <ul class="menu-tabs">
+        <li *ngFor="let item of menuItems" 
+            [class.active]="activeTab === item.id"
+            (click)="setActiveTab(item.id)">
+          {{ item.label }}
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="file-menu" *ngIf="fileMenuOpen">
+      <div class="file-menu-item" (click)="newDocument()">
+        <i class="fas fa-file"></i>
+        <span>New</span>
+      </div>
+      <div class="file-menu-item" (click)="saveDocument()">
+        <i class="fas fa-save"></i>
+        <span>Save</span>
+      </div>
+      <div class="file-menu-item" (click)="downloadDocument()">
+        <i class="fas fa-download"></i>
+        <span>Download</span>
+      </div>
+      <div class="file-menu-item" (click)="toggleTheme()">
+        <i [class]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
+        <span>{{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}</span>
+      </div>
+    </div>
+  </header>
+  
+  
