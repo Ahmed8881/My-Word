@@ -1,0 +1,51 @@
+.editor-container {
+    flex: 1;
+    overflow: auto;
+    background-color: var(--editor-background);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    
+    .ql-container {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      width: 100%;
+      max-width: 816px; /* A4 width at 96 DPI */
+      min-height: 1056px; /* A4 height at 96 DPI */
+      padding: 72px; /* 1-inch margins */
+      margin: 20px 0;
+    }
+    
+    .ql-editor {
+      font-family: 'Calibri', sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #333;
+      padding: 0;
+      
+      p {
+        margin-bottom: 10px;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  
+  /* Dark mode adjustments */
+  :host-context(.dark-mode) {
+    .editor-container {
+      .ql-container {
+        border-color: var(--border-color);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      .ql-editor {
+        color: #333; /* Keep text dark for readability on white paper */
+      }
+    }
+  }
+  
+  

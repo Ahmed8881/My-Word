@@ -1,1 +1,12 @@
-<p>editor works!</p>
+<div class="editor-container">
+    <quill-editor
+      [(ngModel)]="editorContent"
+      [modules]="quillConfig.modules"
+      [placeholder]="quillConfig.placeholder"
+      [theme]="quillConfig.theme"
+      (onEditorCreated)="onEditorCreated($event)"
+      (onContentChanged)="onContentChanged($event)">
+    </quill-editor>
+  </div>
+  
+  
