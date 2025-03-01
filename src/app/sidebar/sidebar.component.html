@@ -1,1 +1,50 @@
-<p>sidebar works!</p>
+<div class="sidebar">
+    <div class="sidebar-items">
+      <div 
+        *ngFor="let item of sidebarItems; let i = index" 
+        class="sidebar-item" 
+        [class.active]="item.active"
+        (click)="activateItem(i)">
+        <i class="fas fa-{{ item.icon }}"></i>
+        <span>{{ item.label }}</span>
+      </div>
+    </div>
+    
+    <div class="sidebar-content" *ngIf="sidebarItems[0].active">
+      <div class="sidebar-header">Find</div>
+      <div class="sidebar-body">
+        <input type="text" placeholder="Search document..." class="search-input">
+        <div class="search-options">
+          <label>
+            <input type="checkbox"> Match case
+          </label>
+          <label>
+            <input type="checkbox"> Whole words
+          </label>
+        </div>
+        <div class="search-buttons">
+          <button class="search-button">Find</button>
+          <button class="search-button">Find All</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="sidebar-content" *ngIf="sidebarItems[1].active">
+      <div class="sidebar-header">Replace</div>
+      <div class="sidebar-body">
+        <input type="text" placeholder="Find..." class="search-input">
+        <input type="text" placeholder="Replace with..." class="search-input">
+        <div class="search-options">
+          <label>
+            <input type="checkbox"> Match case
+          </label>
+        </div>
+        <div class="search-buttons">
+          <button class="search-button">Replace</button>
+          <button class="search-button">Replace All</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

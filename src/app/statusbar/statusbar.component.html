@@ -1,1 +1,15 @@
-<p>statusbar works!</p>
+<div class="status-bar">
+    <div class="status-item">
+      <span>Page {{ currentPage }} of {{ pageCount }}</span>
+    </div>
+    <div class="status-item">
+      <span>{{ wordCount }} words</span>
+    </div>
+    <div class="status-item zoom-controls">
+      <button (click)="changeZoom(-10)">-</button>
+      <span>{{ zoomLevel }}%</span>
+      <button (click)="changeZoom(10)">+</button>
+    </div>
+  </div>
+  
+  

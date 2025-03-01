@@ -1,1 +1,16 @@
-<p>dropdown works!</p>
+<div class="dropdown" [style.width]="width">
+    <div class="dropdown-toggle" (click)="toggleDropdown()">
+      <span>{{ getDisplayValue() }}</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="dropdown-menu" *ngIf="isOpen">
+      <div 
+        class="dropdown-item" 
+        *ngFor="let item of items" 
+        (click)="selectItem(item)">
+        {{ displayProperty ? item[displayProperty] : item }}
+      </div>
+    </div>
+  </div>
+  
+  
